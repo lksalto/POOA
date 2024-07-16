@@ -1,14 +1,12 @@
 package portalVagas;
-import portalVagas.*;
+
 import java.util.List;
 
 public class Funcionario extends User implements Observer {
     private PortalEmprego portal;
 
     public Funcionario(String nome, String email, PortalEmprego portal) {
-        super(nome, email);
-        this.portal = portal;
-        portal.registerObserver(this);
+        super(nome, email, portal);
     }
 
     public List<Vaga> buscaVagas(String x) {
@@ -19,8 +17,13 @@ public class Funcionario extends User implements Observer {
         vaga.addFuncionario(this);
     }
 
+    public String getNome()
+    {
+        return this.nome;
+    }
+
     @Override
     public void update(Vaga vaga) {
-        System.out.println("Nova vaga postada: " + vaga.getNome());
+        System.out.println("Atencao " + this.getNome() + "! \nNova vaga postada: " + vaga.getNome());
     }
 }

@@ -1,5 +1,5 @@
 package portalVagas;
-import portalVagas.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +25,8 @@ public class PortalEmprego {
     }
 
     public void notifyObservers(Vaga vaga) {
-        for (Observer observer : observers) {
-            observer.update(vaga);
+        for (Funcionario funcionario : funcionarios) {
+            funcionario.update(vaga);
         }
     }
 

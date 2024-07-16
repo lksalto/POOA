@@ -1,5 +1,5 @@
 package portalVagas;
-import portalVagas.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +14,7 @@ public class Vaga {
         this.descricao = descricao;
         this.empresa = empresa;
         this.funcionarios = new ArrayList<>();
+
     }
 
     public void addFuncionario(Funcionario funcionario) {
