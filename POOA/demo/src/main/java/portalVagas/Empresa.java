@@ -16,7 +16,7 @@ public class Empresa extends User {
         vagas.add(vaga);
     }
 
-    public List<Vaga> getJobs() {
+    public List<Vaga> getVagas() {
         return vagas;
     }
 }
