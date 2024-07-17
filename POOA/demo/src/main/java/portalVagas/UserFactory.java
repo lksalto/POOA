@@ -17,12 +17,17 @@ public class UserFactory {
         return instance;
     }
 
-    public User criaUser(String tipo, String nome, String email, PortalEmprego portal) {
-        if (tipo.equalsIgnoreCase("Empresa")) {
-            return new Empresa(nome, email, portal);
-        } else if (tipo.equalsIgnoreCase("Funcionario")) {
-            return new Funcionario(nome, email, portal);
-        }
-        return null;
+    public Usuario criaEmpresa(String nome, String email, String senha, 
+                            String cnpj, String descricao, String cidade, 
+                            PortalEmprego portal) {
+
+        return new Empresa(nome, email, senha, cnpj, descricao, cidade, portal);
+    }
+
+    public Usuario criaFuncionario(String nome, String email, String senha, 
+                            String cpf, String telefone, String sexo, String dataNasc, 
+                            PortalEmprego portal)
+    {
+        return new Funcionario(nome, email, senha, cpf, telefone, sexo, dataNasc, portal);
     }
 }
