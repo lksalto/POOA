@@ -3,6 +3,7 @@ package portalVagas;
 
 
 public class UserFactory {
+    //SINGLETON
     // Instância única da classe
     private static UserFactory instance;
 
@@ -17,6 +18,7 @@ public class UserFactory {
         return instance;
     }
 
+    //FACTORY
     public Usuario criaEmpresa(String nome, String email, String senha, 
                             String cnpj, String descricao, String cidade, 
                             PortalEmprego portal) {

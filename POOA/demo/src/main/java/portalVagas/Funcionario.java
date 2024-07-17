@@ -17,10 +17,11 @@ public class Funcionario extends Usuario implements Observer {
         this.telefone = telefone;
         this.sexo = sexo;
         this.dataNasc = dataNasc;
+        System.out.println("PORTAL: " + portal.getNome());
     }
 
     public List<Vaga> buscaVagas(String x) {
-        return portal.buscaVagas(x);
+        return this.portal.buscaVagas(x);
     }
 
     public void aplicarVaga(Vaga vaga) {
@@ -32,8 +33,11 @@ public class Funcionario extends Usuario implements Observer {
         return this.nome;
     }
 
+    //Observer
     @Override
     public void update(Vaga vaga) {
-        System.out.println("\nAtencao " + this.getNome() + "! \nNova vaga postada: " + vaga.getNome() + "\n");
+        System.out.println("\nAtencao " + 
+        this.getNome() + "! \nNova vaga postada: " 
+        + vaga.getNome());
     }
 }

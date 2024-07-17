@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PortalEmprego {
+    private String nome;
     private List<Empresa> empresas;
     private List<Funcionario> funcionarios;
     private List<Vaga> vagas;
@@ -14,6 +15,7 @@ public class PortalEmprego {
         this.funcionarios = new ArrayList<>();
         this.vagas = new ArrayList<>();
         this.observers = new ArrayList<>();
+        this.nome = "a";
     }
 
     public void registerObserver(Observer observer) {
@@ -51,5 +53,9 @@ public class PortalEmprego {
             }
         }
         return result;
+    }
+    public String getNome()
+    {
+        return this.nome;
     }
 }
