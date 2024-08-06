@@ -1,5 +1,6 @@
 package portalVagas;
 
+
 public class Main {
     public static void main(String[] args) {
         // Instanciacao de fabricas
@@ -35,7 +36,7 @@ public class Main {
         portal1.postarVaga(empresa1, vaga4);
         portal1.postarVaga(empresa1, vaga5);
         portal1.postarVaga(empresa1, vaga6);
-
+        
         // Candidaturas
         portal1.candidatura(funcionario1, vaga1);
         portal1.candidatura(funcionario1, vaga4);
@@ -54,6 +55,7 @@ public class Main {
         portal1.acaoVaga(0, new Fechar());
         System.out.println("\n");
         portal1.acaoVaga(0, new Abrir());
+        
         System.out.println("\n");
         System.out.println("-----------HISTORICO DA VAGA-----------\n");
         portal1.listarHistoricoVaga(0);
