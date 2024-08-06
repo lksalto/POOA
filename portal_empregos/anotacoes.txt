@@ -24,3 +24,12 @@ Padrões:
   acredito que nao de:
 	  composite
 	  bridge
+
+
+------------------------
+Leandro:
+Adicionei o padrão memento para a vaga, a fim de acompanhar os estados
+que ela já esteve
+Consequentemente, adicionei o padrão state para poder guardar os possiveis estados
+(No momento temos aberta, fechada e cancelada)
+Adicionei tambem o padrão strategy, para tratar como podemos alterar o estado dependendo do estado que ela se encontra
