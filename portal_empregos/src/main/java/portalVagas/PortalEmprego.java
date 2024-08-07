@@ -106,7 +106,7 @@ public class PortalEmprego {
         if (indice >= 0 && indice < vagas.size()) {
             Vaga vaga = vagas.get(indice);
             String historico = "";
-            System.out.println("Histórico de estados da vaga '" + vaga.getNome() + "':");
+            
             for (MementoVaga memento : vaga.getHistorico()) {
                 historico += (memento.getEstado().getDesc() + " -> ");
             }

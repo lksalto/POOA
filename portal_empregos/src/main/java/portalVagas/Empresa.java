@@ -11,8 +11,8 @@ public class Empresa extends Usuario {
     private ArrayList<Observer> observers;
 
     public Empresa(String nome, String email, String senha,String cnpj,
-                    String descricao, String cidade,PortalEmprego portal) {
-        super(nome, email, senha, portal);
+                    String descricao, String cidade) {
+        super(nome, email, senha);
         this.cnpj = cnpj;
         this.descricao = descricao;
         this.cidade = cidade;
@@ -20,8 +20,8 @@ public class Empresa extends Usuario {
     }
 
     public Empresa(String nome, String email, String senha,String cnpj,
-                    String descricao, String cidade,PortalEmprego portal, ArrayList<Observer> observers) {
-        super(nome, email, senha, portal);
+                    String descricao, String cidade, ArrayList<Observer> observers) {
+        super(nome, email, senha);
         this.cnpj = cnpj;
         this.descricao = descricao;
         this.cidade = cidade;
@@ -70,19 +70,7 @@ public class Empresa extends Usuario {
         vagas.add(vaga);
     }
 
-    //Tentativa de uso do factory + state
-    //Talvez a empresa que devesse implementar o acaoVaga?
-    /* 
-    public void acaoVaga(int indice, Acao acao) {
-        if (indice >= 0 && indice < vagas.size()) {
-            Vaga vaga = vagas.get(indice);
-            System.out.println("EMPRESA TENTANDO " + acao.getClass().getSimpleName() + " A VAGA DE " + vaga.getNome());
-            vaga.executarAcao(acao);
-        } else {
-            System.out.println("Indice de vaga invalido.");
-        }
-    }
-    */
+
     public String getDocumento()
     {
         return getCnpj();

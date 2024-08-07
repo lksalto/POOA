@@ -10,8 +10,8 @@ public class Main {
         
         // Criacao dos objetos concretos
         PortalEmprego portal1 = new PortalEmprego("Portal de POOA");
-        Usuario empresa1 = userFactory.criarEmpresa("TechCorp", "techplus@exemplo.com",  "TechCorp_123", "12.341.488/0001-08", "Empresa de tecnologia", "Sao Paulo", portal1);
-        Usuario funcionario1 = userFactory.criarFuncionario("Fulano", "fulano@gmail.com", "Senha123","123.123.123-09", "(11) 1234-5678", "Masculino", "09/02/1931" , portal1);
+        Usuario empresa1 = userFactory.criarEmpresa("TechCorp", "techplus@exemplo.com",  "TechCorp_123", "12.341.488/0001-08", "Empresa de tecnologia", "Sao Paulo");
+        Usuario funcionario1 = userFactory.criarFuncionario("Fulano", "fulano@gmail.com", "Senha123","123.123.123-09", "(11) 1234-5678", "Masculino", "09/02/1931");
         Observer obsFunc1 = observerFactory.criaObserverFuncionario(funcionario1);
         Observer obsEmp1 = observerFactory.criaObserverEmpresa(empresa1);
         Vaga vaga1 = vagaFactory.criaVaga("Engenheiro de Software", "Vaga para desenvolvedores plenos", empresa1);

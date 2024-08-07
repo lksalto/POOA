@@ -14,19 +14,19 @@ public class UserFactory {
         return instance;
     }
 
-    public Usuario criarEmpresa(String nome, String email, String senha, String cnpj, String descricao, String cidade, PortalEmprego portal) {
-        return new Empresa(nome, email, senha, cnpj, descricao, cidade, portal);
+    public Usuario criarEmpresa(String nome, String email, String senha, String cnpj, String descricao, String cidade) {
+        return new Empresa(nome, email, senha, cnpj, descricao, cidade);
     }
 
-    public Usuario criarEmpresa(String nome, String email, String senha, String cnpj, String descricao, String cidade, PortalEmprego portal, ArrayList<Observer> observers) {
-        return new Empresa(nome, email, senha, cnpj, descricao, cidade, portal, observers);
+    public Usuario criarEmpresa(String nome, String email, String senha, String cnpj, String descricao, String cidade, ArrayList<Observer> observers) {
+        return new Empresa(nome, email, senha, cnpj, descricao, cidade, observers);
     }
 
-    public Usuario criarFuncionario(String nome, String email, String senha, String cpf, String telefone, String sexo, String dataNasc, PortalEmprego portal) {
-        return new Funcionario(nome, email, senha, cpf, telefone, sexo, dataNasc, portal);
+    public Usuario criarFuncionario(String nome, String email, String senha, String cpf, String telefone, String sexo, String dataNasc) {
+        return new Funcionario(nome, email, senha, cpf, telefone, sexo, dataNasc);
     }
 
-    public Usuario criarFuncionario(String nome, String email, String senha, String cpf, String telefone, String sexo, String dataNasc, PortalEmprego portal, ArrayList<Observer> observers) {
-        return new Funcionario(nome, email, senha, cpf, telefone, sexo, dataNasc, portal, observers);
+    public Usuario criarFuncionario(String nome, String email, String senha, String cpf, String telefone, String sexo, String dataNasc, ArrayList<Observer> observers) {
+        return new Funcionario(nome, email, senha, cpf, telefone, sexo, dataNasc, observers);
     }
 }

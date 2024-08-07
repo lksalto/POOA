@@ -17,10 +17,11 @@ Padrões:
 	  singleton
 	  observer
 	  facade
-  talvez de pra ter:
 	  memento
-          strategy
+        strategy
 	  state
+  talvez de pra ter:
+
   acredito que nao de:
 	  composite
 	  bridge
@@ -33,3 +34,17 @@ que ela já esteve
 Consequentemente, adicionei o padrão state para poder guardar os possiveis estados
 (No momento temos aberta, fechada e cancelada)
 Adicionei tambem o padrão strategy, para tratar como podemos alterar o estado dependendo do estado que ela se encontra
+
+
+----------------------------
+AULA:
+
+OBSERVER: Candidatura para desafogar a vaga
+	Para o funcionário, o subject é a empresa
+	para a empresa, o subject é a vaga
+
+GERAL:
+	Adicionar o pacotes
+	Mudar o nome de "funcionario" para "candidato"
+
+	CRIAR POOL DE VAGAS E INSCRIÇÃO
