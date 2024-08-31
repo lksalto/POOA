@@ -16,8 +16,6 @@ public class Vaga {
         this.estado = new Aberta();
     }
 
-
-
     void setNome(String n) {
         this.nome = n;
     }

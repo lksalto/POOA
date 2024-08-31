@@ -5,13 +5,14 @@ import java.util.ArrayList;
 
 import portalVagas.Observer.Observer;
 
-public class Candidato extends Usuario{
+public class Candidato extends Usuario implements Observer<Vaga>{
 
     private String cpf;
     private String telefone;
     private String sexo;
     private String dataNasc;
-    private ArrayList<Observer> observers;
+
+
 
     public Candidato(String nome, String email, String senha, String cpf,
                         String telefone, String sexo, String dataNasc) {
@@ -20,18 +21,7 @@ public class Candidato extends Usuario{
         this.telefone = telefone;
         this.sexo = sexo;
         this.dataNasc = dataNasc;
-        this.observers = new ArrayList<>();
-    }
-
-    public Candidato(String nome, String email, String senha, String cpf,
-                        String telefone, String sexo, String dataNasc, 
-                         ArrayList<Observer> observers) {
-        super(nome, email, senha);
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.sexo = sexo;
-        this.dataNasc = dataNasc;
-        this.observers = observers;
+       
     }
 
 
@@ -52,31 +42,15 @@ public class Candidato extends Usuario{
         return dataNasc;
     }
 
-    ArrayList<Observer> getObservers() {
-        return observers;
-    }
-
-    void setObservers(ArrayList<Observer> observers) {
-        this.observers = observers;
-    }
-
-    public void adicionarObserver(Observer observer) {
-        this.observers.add(observer);
-    }
-
-    public void removerObserver(Observer observer) {
-        this.observers.remove(observer);
-    }
-
-    public void notificar(Vaga v) {
-        for (Observer o : this.observers) {
-            o.update(v);
-        }
-    }
-
     public String getDocumento()
     {
         return getCpf();
     }
+
+    @Override
+    public void update(Vaga vaga) {
+        System.out.println("Nova vaga adicionada: " + vaga.getNome());
+    }
+
     
 }

@@ -45,6 +45,7 @@ public class PoolInscricao implements Subject<Inscricao> {
 
     @Override
     public void notificar(Inscricao inscricao) {
+        
         for (Observer observer : observers) {
             observer.update(inscricao);
         }

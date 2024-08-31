@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import portalVagas.Observer.Observer;
 
-public class Empresa extends Usuario{
+public class Empresa extends Usuario implements Observer<Inscricao>{
     private PoolVagas vagas;
     private PoolInscricao inscricoes;
     private String cnpj;
@@ -35,23 +35,23 @@ public class Empresa extends Usuario{
         this.inscricoes = new PoolInscricao();
     }
 
-    String getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    PoolVagas getVagas() {
+    public PoolVagas getVagas() {
         return vagas;
     }
     
-    PoolInscricao getInscricoes() {
+    public PoolInscricao getInscricoes() {
         return inscricoes;
     }
 
-    String getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    String getCidade() {
+    public String getCidade() {
         return cidade;
     }
     
@@ -77,12 +77,6 @@ public class Empresa extends Usuario{
         this.observers.remove(observer);
     }
 
-    public void notificar(Vaga vaga) {
-        for (Observer o : this.observers) {
-            o.update(vaga);
-        }
-    }
-
     public void adicionarVaga(Vaga vaga) {
         vagas.adicionarVaga(vaga);
     }
@@ -91,6 +85,9 @@ public class Empresa extends Usuario{
         inscricoes.adicionarInscricao(inscricao);
     }
 
-
+    @Override
+    public void update(Inscricao inscricao) {
+        System.out.println(inscricao.getCandidato().getNome() + " se inscreveu na vaga: " + inscricao.getVaga().getNome());
+    }
 
 }

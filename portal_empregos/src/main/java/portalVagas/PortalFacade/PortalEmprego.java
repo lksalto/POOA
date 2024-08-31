@@ -3,7 +3,8 @@ package portalVagas.PortalFacade;
 import java.util.ArrayList;
 import java.util.List;
 
-import portalVagas.Observer.Observer;
+
+import portalVagas.Observer.*;
 
 public class PortalEmprego {
     private String nome;
@@ -30,45 +31,24 @@ public class PortalEmprego {
         return this.nome;
     }
 
-    public void adicionarEmpresaObserver(Empresa empresa, Observer observer) {
-
-        empresa.getInscricoes().adicionarObserver(observer);
-        empresa.getVagas().adicionarObserver(observer);
+    public void adicionarObserverInscricao(Usuario user) {
+        Empresa empresa = (Empresa) user;
+        empresa.getInscricoes().adicionarObserver(empresa);
     }
 
-    public void adicionarCandidatoObserver(Candidato candidato, Observer observer) {
-
-        //candidato.getInscricoes().adicionarObserver(observer);
-
-    }
-
-
-
-    public void removerEmpresaObserver(Usuario empresa, Observer observer) {
-        empresa.removerObserver(observer);
-    }
-
-    public void removerCandidatoObserver(Usuario candidato, Observer observer) {
-        candidato.removerObserver(observer);
+    public void adicionarObserverVaga(Usuario user, Usuario emp) {
+        Candidato candidato = (Candidato) user;
+        Empresa empresa = (Empresa) emp;
+        empresa.getVagas().adicionarObserver(candidato);
     }
 
     public void candidatura(Usuario candidato, Vaga vaga) {
         Empresa empresa = (Empresa) vaga.getEmpresa();
         Inscricao inscricao = new Inscricao(vaga, (Candidato) candidato);
+        
         empresa.getInscricoes().adicionarInscricao(inscricao);
-
-    }
-
-    public void notificarEmpresa(Vaga vaga) {
-        Usuario empresa = vaga.getEmpresa();
-        int indiceEmpresa = this.empresas.indexOf(empresa);
-        this.empresas.get(indiceEmpresa).notificar(vaga);
-    }
-
-    public void notificarCandidatos(Vaga vaga) {
-        for (Usuario candidato : candidatos) {
-            candidato.notificar(vaga);
-        }
+        
+        
     }
 
     public void registrarEmpresa(Usuario empresa) {

@@ -24,7 +24,7 @@ public class UserFactory {
     }
 
     public Usuario criarEmpresa(String nome, String email, String senha, String cnpj, String descricao, String cidade, ArrayList<Observer> observers) {
-        return new Empresa(nome, email, senha, cnpj, descricao, cidade, observers);
+        return new Empresa(nome, email, senha, cnpj, descricao, cidade);
     }
 
     public Usuario criarCandidato(String nome, String email, String senha, String cpf, String telefone, String sexo, String dataNasc) {
@@ -32,6 +32,6 @@ public class UserFactory {
     }
 
     public Usuario criarCandidato(String nome, String email, String senha, String cpf, String telefone, String sexo, String dataNasc, ArrayList<Observer> observers) {
-        return new Candidato(nome, email, senha, cpf, telefone, sexo, dataNasc, observers);
+        return new Candidato(nome, email, senha, cpf, telefone, sexo, dataNasc);
     }
 }

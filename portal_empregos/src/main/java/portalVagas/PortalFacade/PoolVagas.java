@@ -36,7 +36,7 @@ public class PoolVagas implements Subject<Vaga> {
 
     @Override
     public void adicionarObserver(Observer observer) {
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		
         this.observers.add(observer);
     }
 

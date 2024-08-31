@@ -29,8 +29,8 @@ public class Main {
         Vaga vaga6 = vagaFactory.criaVaga("Secretario", "Vaga Secretaria", empresa1);
         
         // Definicao dos observers em Empresa e Candidato
-        portal1.adicionarEmpresaObserver((Empresa) empresa1, candidato1);
-        portal1.adicionarCandidatoObserver((Candidato) candidato1, empresa1);
+        portal1.adicionarObserverInscricao(empresa1);
+        portal1.adicionarObserverVaga(candidato1, empresa1);
         // Registro de empresa e candidato no portal
         portal1.registrarEmpresa(empresa1);
         portal1.registrarCandidato(candidato1);
@@ -44,6 +44,7 @@ public class Main {
         portal1.postarVaga(empresa1, vaga6);
         
         // Candidaturas
+        
         portal1.candidatura(candidato1, vaga1);
         portal1.candidatura(candidato1, vaga4);
         portal1.candidatura(candidato1, vaga5);

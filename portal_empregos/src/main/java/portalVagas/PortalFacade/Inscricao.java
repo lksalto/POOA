@@ -10,19 +10,19 @@ public class Inscricao {
 		this.candidato = candidato;
 	}
 
-	Candidato getCandidato() {
+	public Candidato getCandidato() {
 		return candidato;
 	}
 
-	void setCandidato(Candidato candidato) {
+	public void setCandidato(Candidato candidato) {
 		this.candidato = candidato;
 	}
 
-	 Vaga getVaga() {
+	public Vaga getVaga() {
 		return vaga;
 	}
 
-	void setVaga(Vaga vaga) {
+	public void setVaga(Vaga vaga) {
 		this.vaga = vaga;
 	}
 
