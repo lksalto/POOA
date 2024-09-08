@@ -2,10 +2,6 @@ package portalVagas.PortalFacade;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
-import portalVagas.Observer.*;
-
 public class PortalEmprego {
     private String nome;
     private List<Usuario> empresas;
@@ -43,12 +39,7 @@ public class PortalEmprego {
     }
 
     public void candidatura(Usuario candidato, Vaga vaga) {
-        Empresa empresa = (Empresa) vaga.getEmpresa();
-        Inscricao inscricao = new Inscricao(vaga, (Candidato) candidato);
-        
-        empresa.getInscricoes().adicionarInscricao(inscricao);
-        
-        
+        new Inscricao(vaga, (Candidato) candidato);
     }
 
     public void registrarEmpresa(Usuario empresa) {
@@ -59,10 +50,10 @@ public class PortalEmprego {
         candidatos.add(candidato);
     }
 
-    public void postarVaga(Usuario empresa, Vaga vaga) {
+    public void postarVaga(Vaga vaga) {
         vagas.add(vaga);
-        empresa.adicionarVaga(vaga);
-        //notificarCandidatos(vaga);
+        Empresa empresaCast = (Empresa) vaga.getEmpresa();
+        empresaCast.adicionarVaga(vaga);
     }
 
     public List<Vaga> buscaVagasFiltradas(String filtro) {
@@ -83,7 +74,8 @@ public class PortalEmprego {
     public void acaoVaga(int indice, Acao acao) {
         if (indice >= 0 && indice < vagas.size()) {
             Vaga vaga = vagas.get(indice);
-            System.out.println("\nPORTAL TENTANDO " + acao.getClass().getSimpleName() + " A VAGA DE " + vaga.getNome());
+            System.out.println("\nPORTAL TENTANDO " + acao.getClass().getSimpleName() + " A VAGA DE " 
+            + vaga.getNome());
             vaga.executarAcao(acao);
         } else {
             System.out.println("Indice de vaga invalido.");

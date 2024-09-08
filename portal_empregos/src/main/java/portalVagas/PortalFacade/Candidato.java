@@ -1,8 +1,5 @@
 package portalVagas.PortalFacade;
 
-import java.util.ArrayList;
-
-
 import portalVagas.Observer.Observer;
 
 public class Candidato extends Usuario implements Observer<Vaga>{
@@ -11,8 +8,6 @@ public class Candidato extends Usuario implements Observer<Vaga>{
     private String telefone;
     private String sexo;
     private String dataNasc;
-
-
 
     public Candidato(String nome, String email, String senha, String cpf,
                         String telefone, String sexo, String dataNasc) {
@@ -23,8 +18,6 @@ public class Candidato extends Usuario implements Observer<Vaga>{
         this.dataNasc = dataNasc;
        
     }
-
-
 
     String getCpf() {
         return cpf;
@@ -49,7 +42,8 @@ public class Candidato extends Usuario implements Observer<Vaga>{
 
     @Override
     public void update(Vaga vaga) {
-        System.out.println("Nova vaga adicionada: " + vaga.getNome());
+        System.out.println("Nova vaga adicionada: " + vaga.getNome() + 
+        " (" + vaga.getEmpresa().getNome() + ")");
     }
 
     

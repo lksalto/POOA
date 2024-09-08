@@ -8,6 +8,9 @@ public class Inscricao {
 	Inscricao(Vaga vaga, Candidato candidato) {
 		this.vaga = vaga;
 		this.candidato = candidato;
+		Empresa emp;
+		emp = (Empresa) vaga.getEmpresa();
+		emp.adicionarInscricao(this);
 	}
 
 	public Candidato getCandidato() {

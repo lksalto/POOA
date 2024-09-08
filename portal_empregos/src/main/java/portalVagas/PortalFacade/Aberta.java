@@ -5,7 +5,6 @@ public class Aberta implements Estado {
     @Override
     public void abrir(Vaga vaga)
     {
-        
         System.out.println("A vaga '" + vaga.getNome() + "'já está aberta!");
     }
 

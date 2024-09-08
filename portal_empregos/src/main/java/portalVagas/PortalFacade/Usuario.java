@@ -1,7 +1,5 @@
 package portalVagas.PortalFacade;
 
-import portalVagas.Observer.Observer;
-
 public abstract class Usuario{
     private String email;
     private String nome;
@@ -25,10 +23,6 @@ public abstract class Usuario{
     public String getSenha() {
         return senha;
     }
-
-    public void adicionarVaga(Vaga vaga) {}
-
-
+    
     public abstract String getDocumento();
-
 }

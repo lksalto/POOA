@@ -12,12 +12,7 @@ public class PoolVagas implements Subject<Vaga> {
 
     public PoolVagas() {
         this.vagas = new ArrayList<>();
-        this.observers = new ArrayList<>(); // Initialize observers list
-    }
-
-    public PoolVagas(ArrayList<Vaga> vagas) {
-        this.vagas = vagas;
-        this.observers = new ArrayList<>(); // Initialize observers list
+        this.observers = new ArrayList<>(); // Inicializar observadores
     }
 
     public ArrayList<Vaga> getVagas() {

@@ -5,47 +5,29 @@ public class Vaga {
     private String descricao;
     private Usuario empresa;
     //State
-    private Estado estado;
+    private Estado estado; 
 
     public Vaga(String nome, String descricao, Usuario empresa) {
         this.nome = nome;
         this.descricao = descricao;
         this.empresa = empresa;
-
         //Inicializar com estado = aberto
         this.estado = new Aberta();
     }
 
-    void setNome(String n) {
-        this.nome = n;
-    }
-    
     public String getNome() {
         return this.nome;
     }
-
-    void setDescricao(String d) {
-        this.nome = d;
-    }
-
-    String getDescricao() {
+    public  String getDescricao() {
         return this.descricao;
     }
-
-    void setEmpresa(Empresa e) {
-        this.empresa = e;
-    }
-
-    Usuario getEmpresa() {
+    public Usuario getEmpresa() {
         return this.empresa;
     }
-
-    //getters e setters para estado
     void setEstado(Estado estado) {
         this.estado = estado;
     }
-    
-    Estado getEstado() {
+    public  Estado getEstado() {
         return this.estado;
     }
 
@@ -62,11 +44,13 @@ public class Vaga {
         estado.cancelar(this);
     }
 
-    // Método para executar a ação (factory)
+    // Método para executar a ação (strategy)
     public void executarAcao(Acao acao) {
-        //O state vai decidir o que acontece ao executar cada ação.
+        // O state vai decidir o que acontece ao executar cada ação.
         acao.executar(this);
     }
 
 
 }
+
+

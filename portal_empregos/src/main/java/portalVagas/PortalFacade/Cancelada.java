@@ -5,20 +5,23 @@ public class Cancelada implements Estado {
     @Override
     public void abrir(Vaga vaga)
     {
-        System.out.println("A vaga '" + vaga.getNome() + "' nao pode ser aberta, pois foi cancelada!");
+        System.out.println("A vaga '" + vaga.getNome() + 
+                        "' nao pode ser aberta, pois foi cancelada!");
         
     }
 
     @Override
     public void fechar(Vaga vaga)
     {
-        System.out.println("A vaga '" + vaga.getNome() + "' nao pode ser fechada, pois foi cancelada!");
+        System.out.println("A vaga '" + vaga.getNome() + 
+                        "' nao pode ser fechada, pois foi cancelada!");
     }
 
     @Override
     public void cancelar(Vaga vaga)
     {
-        System.out.println("A vaga '" + vaga.getNome() + "' já foi cancelada!");
+        System.out.println("A vaga '" + vaga.getNome() + 
+                        "' já foi cancelada!");
     }
     
     public String getDesc()
